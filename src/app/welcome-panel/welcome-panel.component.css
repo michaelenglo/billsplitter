@@ -1,11 +1,13 @@
 .container {
   display: grid;
-  grid-template-columns: 10% auto 10%;
-  grid-template-rows: 10% auto;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: 10% 2fr 1fr 10%;
   grid-template-areas: 
   "header header header"
-  "body body body";
-  background-color: rgb(104, 148, 104);
+  "upper-left upper-center upper-right"
+  "lower-left lower-center lower-right"
+  "footer footer footer";
+  background-color: var(--color-primary);
   height: 100vh;
   width: 100vw;
 }
@@ -14,4 +16,11 @@
   grid-area: header;
   font-size: 3rem;
   margin: 10px;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.button {
+  grid-area: lower-center;
+  align-items: center;
 }
